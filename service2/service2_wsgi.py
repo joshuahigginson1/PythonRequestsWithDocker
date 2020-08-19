@@ -19,9 +19,6 @@ def on_get_request():
     return Response(return_animal(), mimetype='text/plain')
 
 
-
-
-
 # Run our App ----------------------------------------------------------
 
 

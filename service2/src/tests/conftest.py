@@ -7,7 +7,14 @@ by pytest, and is considered a local plugin.
 
 import pytest
 
+
 # Fixtures -------------------------------------------------------------
+
+@pytest.fixture(name="list_of_animals", scope='module')
+def list_of_animals():
+    return ["Monkey 🐵", "Wolf 🐺", "Cat 🐱", "Lion 🦁", "Tiger 🐯",
+            "Unicorn 🦄", "Cow 🐮", "Pig 🐷"]
+
 
 """@pytest.fixture(name="connect_database", scope='module', autouse=False)
 def tasks_db_connection(tmpdir):
