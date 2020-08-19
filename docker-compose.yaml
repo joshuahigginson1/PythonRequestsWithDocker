@@ -1,25 +1,33 @@
 ---
-version: "x.x"
-
+version: '3.8'
 services:
 
   nginx:
     image: nginx:latest
-
-    volumes:
-      - type: bind
-        source: ./nginx/nginx.conf
-        target: /etc/nginx/nginx.conf
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
 
   service1:
-    build: ./service1/Dockerfile
+    image: animal_s1:latest
+
+    build:
+      context: ./service1
+      dockerfile: Dockerfile
+
     ports:
       - target: 5000
         published: 5000
         protocol: tcp
 
   service2:
-    build: ./service2/Dockerfile
+    image: animal_s2:latest
+
+    build:
+      context: ./service2
+      dockerfile: Dockerfile
+
     ports:
       - target: 5001
         published: 5001
