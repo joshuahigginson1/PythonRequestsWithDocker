@@ -29,7 +29,7 @@ def generate_page():
 
     return render_template("generate_page.html",
                            title="🐋 ~ Generate! ~ 🐋",
-                           random_animal=animal_response,
+                           random_animal=animal_response.decode('utf-8'),
                            random_animal_sound=noise_response)
 
 
