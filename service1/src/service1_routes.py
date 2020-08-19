@@ -3,7 +3,9 @@
 # Imports --------------------------------------------------------------
 
 from flask import render_template
-from service1.src import service1
+
+from src.service1_initialise import service1
+
 import requests
 
 # Routes ---------------------------------------------------------------

@@ -1,4 +1,4 @@
-FROM python:3.8-alpine
+FROM python:3.8-buster
 
 LABEL version="1.0"
 LABEL description="Animal Style - Service 1 Container."
@@ -7,8 +7,9 @@ EXPOSE 5000
 
 WORKDIR /
 
-COPY . /
+COPY . .
 
-RUN sudo apt-get update && sudo pip3 install requirements.txt
+RUN apt-get update
+RUN pip3 install -r requirements.txt
 
-ENTRYPOINT ["/service1", "service1_wsgi.py"]
+ENTRYPOINT ["/usr/local/bin/python", "service1_wsgi.py"]

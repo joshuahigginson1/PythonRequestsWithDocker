@@ -2,7 +2,7 @@
 
 # Imports --------------------------------------------------------------
 
-from service2.src.service2 import return_animal, return_animal_noise
+from src.service2 import return_animal, return_animal_noise
 
 from flask import Flask, Response, request
 

@@ -2,7 +2,7 @@
 
 # Imports --------------------------------------------------------------
 
-from service1.src import service1
+from src.service1_initialise import service1
 
 
 # Run our App ----------------------------------------------------------

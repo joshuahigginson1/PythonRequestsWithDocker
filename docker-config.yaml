@@ -1,0 +1,24 @@
+---
+version: "latest"
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - type: bind
+        source: ./nginx/nginx.conf
+        target: /etc/nginx/nginx.conf
+
+  service1:
+    build: ./service1/Dockerfile
+    ports:
+      - target: 5000
+        published: 5000
+        protocol: tcp
+
+  service2:
+    build: ./service2/Dockerfile
+    ports:
+      - target: 5001
+        published: 5001
+        protocol: tcp
+...
