@@ -16,6 +16,23 @@ def list_of_animals():
             "Unicorn 🦄", "Cow 🐮", "Pig 🐷"]
 
 
+@pytest.fixture(name="dict_of_noises", scope='module')
+def dictionary_of_noises():
+    return {
+        "Monkey 🐵": "Ooh Aah (Just a little bit?)",
+        "Wolf 🐺": "HOWL.",
+        "Cat 🐱": "Meow.",
+        "Lion 🦁": "ROAR.",
+        "Tiger 🐯": "Carol Baskin.",
+        "Unicorn 🦄": "✨ Sparkles ✨",
+        "Cow 🐮": "Moo.",
+        "Pig 🐷": "Oink."
+    }
+
+
+
+
+
 """@pytest.fixture(name="connect_database", scope='module', autouse=False)
 def tasks_db_connection(tmpdir):
         #tasks_db connects to our db before testing, then disconnects straight after.

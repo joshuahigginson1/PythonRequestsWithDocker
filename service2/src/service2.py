@@ -18,6 +18,26 @@ def return_animal():
     return random.choice(animal_list)
 
 
+def return_animal_noise(animal):
+    """This function returns a given animals' specific noise.
+    Keyword Arguments:
+        animal: A given animal.
+    """
+
+    noise_dictionary = {
+        "Monkey 🐵": "Ooh Aah (Just a little bit?)",
+        "Wolf 🐺": "HOWL.",
+        "Cat 🐱": "Meow.",
+        "Lion 🦁": "ROAR.",
+        "Tiger 🐯": "Carol Baskin.",
+        "Unicorn 🦄": "✨ Sparkles ✨",
+        "Cow 🐮": "Moo.",
+        "Pig 🐷": "Oink."
+    }
+
+    return noise_dictionary.get(animal)
+
+
 # Methods --------------------------------------------------------------
 
 
