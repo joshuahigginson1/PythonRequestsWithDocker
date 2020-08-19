@@ -4,6 +4,7 @@
 
 from flask import render_template
 from service1.src import service1
+import requests
 
 # Routes ---------------------------------------------------------------
 
@@ -18,7 +19,17 @@ def homepage():
 @service1.route("/generate", methods=['GET', 'POST'])
 def generate_page():
     """Returns our generate page for the Animal Style App."""
+
+    service2_animal_url = "http://0.0.0.0:5001/animal"
+    service2_noise_url = "http://0.0.0.0:5001/noise"
+
+    animal_response = requests.get(service2_animal_url).text.encode('utf-8')
+    noise_response = requests.post(service2_noise_url,
+                                   animal_response).text
+
     return render_template("generate_page.html",
-                           title="🐋 ~ Generate! ~ 🐋")
+                           title="🐋 ~ Generate! ~ 🐋",
+                           random_animal=animal_response,
+                           random_animal_sound=noise_response)
 
 
