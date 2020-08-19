@@ -1,8 +1,11 @@
 ---
-version: "latest"
+version: "x.x"
+
 services:
+
   nginx:
     image: nginx:latest
+
     volumes:
       - type: bind
         source: ./nginx/nginx.conf
