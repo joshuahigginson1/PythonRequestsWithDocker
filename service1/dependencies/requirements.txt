@@ -1,0 +1,5 @@
+# A list of required import dependencies for service 1.
+
+pytest==6.0.1
+
+flask==1.1.2

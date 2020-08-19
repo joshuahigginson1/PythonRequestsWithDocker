@@ -1,8 +1,8 @@
-"""A file in our app's root directory that serves as it's 'entry point'."""
+"""Serving as service 1's'entry point."""
 
 # Imports --------------------------------------------------------------
 
-
+from flask import Flask
 
 
 
