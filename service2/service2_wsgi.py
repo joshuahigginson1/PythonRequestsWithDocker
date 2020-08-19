@@ -2,9 +2,9 @@
 
 # Imports --------------------------------------------------------------
 
-from service2.src.service2 import return_animal
+from service2.src.service2 import return_animal, return_animal_noise
 
-from flask import Flask, Response
+from flask import Flask, Response, request
 
 # Create Flask App -----------------------------------------------------
 
@@ -18,6 +18,12 @@ def on_get_request():
     """This function triggers on every GET request to the chosen url."""
     return Response(return_animal(), mimetype='text/plain')
 
+
+@service2.route("/noise", methods=["POST"])
+def on_post_request():
+    """This function triggers on every POST request to chosen endpoint"""
+    data_sent = request.data.decode('utf-8')
+    return Response(return_animal_noise(data_sent), mimetype='text/plain')
 
 # Run our App ----------------------------------------------------------
 
