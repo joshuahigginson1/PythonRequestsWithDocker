@@ -1,0 +1,5 @@
+# The requirements for our service2 app.
+
+pytest==6.0.1
+
+flask==1.1.2

@@ -1,8 +1,10 @@
-"""A file in our app's root directory that serves as it's 'entry point'."""
+"""Serving our service 2 entry point."""
 
 # Imports --------------------------------------------------------------
 
+from flask import Flask
 
+service2 = Flask(__name__)
 
 
 
@@ -11,4 +13,4 @@
 # Run our App ----------------------------------------------------------
 
 if __name__ == "__main__":
-    service2.run(host='0.0.0.0')
+    service2.run(port=5001)
